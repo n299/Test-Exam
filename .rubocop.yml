@@ -8,6 +8,7 @@ AllCops:
     - 'test/**/*'
     - 'node_modules/**/*'
     - 'Gemfile'
+    - 'db/schema.rb'
 Style/StringLiterals:
   EnforcedStyle: single_quotes
   SupportedStyles:
