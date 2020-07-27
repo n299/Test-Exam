@@ -1,0 +1,15 @@
+inherit_gem:
+  rubocop-rails_config:
+    - config/rails.yml
+
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'test/**/*'
+    - 'node_modules/**/*'
+    - 'Gemfile'
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
