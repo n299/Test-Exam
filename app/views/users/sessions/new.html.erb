@@ -1,0 +1,40 @@
+<body class="bg-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card p-3 my-5">
+          <div class="p-3 rounded">
+            <h5 class="mb-2 text-center font-weight-bold">Sign In</h5>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+              <div class="form-group">
+                <%= render 'layouts/messages' %>
+              </div>
+              <div class="form-group">
+                <%= f.email_field :email, placeholder: "Email address", class: "form-control rounded-pill"%>
+              </div>
+              <div class="form-group">
+                <%= f.password_field :password, placeholder: "Password", class: "form-control rounded-pill"%>
+              </div>
+              <div class="custom-control custom-checkbox mb-3">
+                <% if devise_mapping.rememberable? %>
+                  <div class="custom-control custom-checkbox mb-3">
+                    <%= f.check_box :remember_me, class: "custom-control-input" %>
+                    <%= f.label :remember_me , class: "custom-control-label" %>
+                  </div>
+                <% end %>
+              </div>
+              <div class="text-center">
+                <%= f.submit "Log in", class: "btn btn-sm btn-primary text-uppercase w-50 rounded-pill" %>
+              </div>
+              <% end %>
+              <hr class="my-2">
+              <div class="text-right">
+                 <%= link_to 'Home', root_path, class: "btn btn-sm text-info" %>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
