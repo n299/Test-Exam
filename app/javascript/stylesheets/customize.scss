@@ -1,0 +1,16 @@
+.font-size {
+  &-2em {
+    font-size: 2em !important;
+  }
+}
+
+.img-size {
+  &-2em {
+    width: 2em;
+    height: 2em;
+  }
+  &-4em {
+    width: 4em;
+    height: 4em;
+  }
+}
