@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   get 'user/profile', to: 'users#edit', as: 'profile'
   # Devise Admin
   devise_for :admins
+  namespace :admins do
+    root 'pages#index'
+  end
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,8 +1,11 @@
-    /* import bosstrap */
+  /* import bosstrap */
 @import "~bootstrap/scss/bootstrap";
 
-    /* import fontawesome */
+  /* import fontawesome */
 @import '@fortawesome/fontawesome-free';
 
 @import './home/home';
 @import './customize';
+
+  /* import sb admin */
+@import "~startbootstrap-sb-admin-2/scss/sb-admin-2";
