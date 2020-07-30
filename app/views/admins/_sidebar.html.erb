@@ -27,11 +27,12 @@
     Addons
   </div>
 
-  <!-- Nav Item - Charts -->
+  <!-- Nav Item - Users -->
   <li class="nav-item">
-    <a class="nav-link" href="#">
+    <%= link_to admins_users_path, class: "nav-link" do %>
       <i class="fas fa-users"></i>
-      <span>User</span></a>
+      <span>Users</span>
+    <% end %>
   </li>
 
   <!-- Nav Item - Tables -->
