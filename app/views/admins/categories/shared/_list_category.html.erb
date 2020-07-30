@@ -1,0 +1,48 @@
+<div class="container-fluid">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex">
+      <h6 class="m-0 font-weight-bold text-primary">
+        Categories ( <%= categories_size %> ) &emsp;
+      </h6>
+      <h6 class="m-0 font-weight-bold text-primary">
+        <i class="fas fa-plus-circle text-primary"></i>
+        <%= link_to 'New category', new_admins_category_path %>
+      </h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive-xl">
+        <table class="table table-striped text-center w-100 border" id="table-tag" cellspacing="0">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th >Content</th>
+              <th colspan="2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @categories.each do |category| %>
+              <tr>
+                <td class="w-10">
+                  <%= category.id %>
+                </td>
+                <td class="w-60 text-left text-info">
+                  <%= category.content %>
+                </td>
+                <td class="w-5">
+                  <%= link_to edit_admins_category_path(category) do %>
+                    <i class="far fa-edit text-warning"></i>
+                  <% end %>
+                </td>
+                <td class="w-5">
+                  <%= link_to admins_category_path(category), method: :delete, data: {confirm: 'Are you sure to delete this category?'} do %>
+                    <i class="fas fa-trash text-danger"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
