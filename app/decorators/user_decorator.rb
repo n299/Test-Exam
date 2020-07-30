@@ -10,4 +10,12 @@ class UserDecorator < Draper::Decorator
       "#{first_name} #{last_name}"
     end
   end
+
+  def default_avatar_user
+    if avatar.blank?
+      Settings.user_default_img
+    else
+      avatar
+    end
+  end
 end
