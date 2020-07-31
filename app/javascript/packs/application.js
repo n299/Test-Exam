@@ -29,3 +29,6 @@ import "./messages";
 // import sb admin
 import "./sb-admin-2";
 import "startbootstrap-sb-admin-2/vendor/jquery-easing/jquery.easing";
+
+// import cocoon
+import "cocoon";
