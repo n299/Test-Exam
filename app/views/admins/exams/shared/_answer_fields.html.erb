@@ -1,0 +1,9 @@
+<div class="nested-fields border border-info p-2 container mb-2">
+  <div class="form-group ml-3">
+    <%= f.text_area :text, class: 'form-control', cols: '20', rows: '4', placeholder: "Answer" %>
+    <div class="d-flex text center justify-content-end mt-2">
+      <%= f.select :correct, [['Correct', true], ['Incorrect', false]], {}, class: "form-control w-7-em", placeholder: "Content" %>
+      <%= link_to_remove_association "Remove answer", f, class: 'ml-3 btn btn-sm btn-danger' %>
+    </div>
+  </div>
+</div>
