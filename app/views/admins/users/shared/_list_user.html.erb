@@ -9,51 +9,64 @@
         <%= link_to 'New User', new_admins_user_path %>
       </h6>
     </div>
+    <%= render 'admins/users/shared/search' %>
     <div class="card-body">
       <div class="table-responsive-xl">
-        <table class="table table-striped text-center w-100" id="table-tag" cellspacing="0">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Avatar</th>
-              <th>User name</th>
-              <th>Full name</th>
-              <th>Phone</th>
-              <th colspan="2">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @users.each do |user| %>
+        <% if @users.present? %>
+          <div class='text-success ml-3'>
+            <i class="fas fa-globe-europe"></i>: 
+            <%= @users.size %> results
+          </div>
+          <table class="table table-striped text-center w-100" id="table-tag" cellspacing="0">
+            <thead>
               <tr>
-                <td>
-                  <%= user.id %>
-                </td>
-                <td>
-                  <%= image_tag user.default_avatar_user, class: "img-size-2em" %>
-                </td>
-                <td>
-                  <%= user.username %>
-                </td>
-                <td>
-                  <%= user.full_name %>
-                </td>
-                <td>
-                  <%= user.phone %>
-                </td>
-                <td>
-                  <%= link_to edit_admins_user_path(user) do %>
-                    <i class="far fa-edit text-warning"></i>
-                  <% end %>
-                </td>
-                <td>
-                  <%= link_to admins_user_path(user), method: :delete, data: {confirm: 'Are you sure to delete this user?'} do %>
-                    <i class="fas fa-trash text-danger"></i>
-                  <% end %>
-                </td>
+                <th>ID</th>
+                <th>Avatar</th>
+                <th>User name</th>
+                <th>Full name</th>
+                <th>Phone</th>
+                <th colspan="2">Action</th>
               </tr>
-            <% end %>
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              <% @users.each do |user| %>
+                <tr>
+                  <td>
+                    <%= user.id %>
+                  </td>
+                  <td>
+                    <%= image_tag user.default_avatar_user, class: "img-size-2em" %>
+                  </td>
+                  <td>
+                    <%= user.username %>
+                  </td>
+                  <td>
+                    <%= user.full_name %>
+                  </td>
+                  <td>
+                    <%= user.phone %>
+                  </td>
+                  <td>
+                    <%= link_to edit_admins_user_path(user) do %>
+                      <i class="far fa-edit text-warning"></i>
+                    <% end %>
+                  </td>
+                  <td>
+                    <%= link_to admins_user_path(user), method: :delete, data: {confirm: 'Are you sure to delete this user?'} do %>
+                      <i class="fas fa-trash text-danger"></i>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        <% else %>
+          <div class='text-center text-muted'>
+            <i class="far fa-ques tion-circle"></i>
+            We found no results<br>
+            Make sure all words are spelled correctly or try different keywords.
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -15,4 +15,10 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :phone, format: { with: /\d[0-9]\)*\z/ }, length: { minimum: 10, maximum: 15 }, allow_nil: true
+  # Search service
+  scope :search_by_name, lambda { |name_search|
+                            where('username LIKE :search
+                                  OR last_name LIKE :search
+                                  OR first_name LIKE :search', search: "%#{name_search}%")
+                          }
 end

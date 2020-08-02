@@ -5,7 +5,7 @@ module Admins
     before_action :set_user, only: %i[edit update destroy]
 
     def index
-      @users = User.all.decorate
+      @users = SearchService.new(params).perform.decorate
     end
 
     def new
