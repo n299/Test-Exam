@@ -3,8 +3,10 @@
 class Exam < ApplicationRecord
   belongs_to :category
   has_many :questions, dependent: :destroy
-  accepts_nested_attributes_for :questions, reject_if: :reject_questions
+  accepts_nested_attributes_for :questions, reject_if: :reject_questions, allow_destroy: true
   has_many :user_exams
+  # Validate
+  validates :content, presence: true
 
   enum status: %i[draft public], _prefix: true
 
