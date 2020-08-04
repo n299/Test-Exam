@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="card shadow mb-4">
+    <div class="card-header py-3 d-flex">
+      <h6 class="m-0 font-weight-bold text-primary">
+        Total exam ( <%= users_exams_size %> ) &emsp;
+      </h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive-xl">
+        <table class="table table-striped text-center w-100" id="table-tag" cellspacing="0">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User </th>
+              <th>Exam</th>
+              <th>Score</th>
+              <th>Create at</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @user_exams.each do |user_exam| %>
+              <tr>
+                <td>
+                  <%= user_exam.id %>
+                </td>
+                <td>
+                  <%= user_exam.user_success_exam %>
+                </td>
+                <td>
+                  <%= link_to user_exam.exam_content, admins_exam_path(user_exam.exam) %>
+                </td>
+                <td>
+                  <%= user_exam.score %>
+                </td>
+                <td>
+                  <%= user_exam.create_time %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
