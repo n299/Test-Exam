@@ -3,10 +3,6 @@
 class UserExamDecorator < Draper::Decorator
   delegate_all
 
-  def create_time
-    created_at.strftime('%d/%m/%Y %H:%M')
-  end
-
   def exam_content
     exam.content
   end

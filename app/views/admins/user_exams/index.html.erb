@@ -2,7 +2,7 @@
   <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex">
       <h6 class="m-0 font-weight-bold text-primary">
-        Total exam ( <%= users_exams_size %> ) &emsp;
+        <%= t('.total', exam_size: users_exams_size) %>
       </h6>
     </div>
     <div class="card-body">
@@ -11,10 +11,18 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th>User </th>
-              <th>Exam</th>
-              <th>Score</th>
-              <th>Create at</th>
+              <th>
+                <%= t('.user') %>
+              </th>
+              <th>
+                <%= t('.exam') %>
+              </th>
+              <th>
+                <%= t('.score') %>
+              </th>
+              <th>
+                <%= t('.created_at') %>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -33,7 +41,7 @@
                   <%= user_exam.score %>
                 </td>
                 <td>
-                  <%= user_exam.create_time %>
+                  <%= l(user_exam.created_at, format: :default) %>
                 </td>
               </tr>
             <% end %>

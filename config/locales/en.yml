@@ -30,4 +30,17 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      default: '%B %d, %Y %H:%M'
+
+  admins:
+    user_exams:
+      index:
+        total: Total exam %{exam_size}
+        user: User
+        exam: Exam
+        score: Score
+        created_at: Created at
+    sidebar:
+      user_exam: User exams
