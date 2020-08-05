@@ -1,0 +1,15 @@
+vi:
+  time:
+    formats:
+      default: '%B %d, %Y %H:%M'
+
+  admins:
+    user_exams:
+      index:
+        total: Tổng số bài kiểm tra %{exam_size}
+        user: Người làm bài
+        exam: Tên bài 
+        score: Điểm số
+        created_at: Ngày làm bài
+    sidebar:
+      user_exam: Bài kiểm tra đã làm

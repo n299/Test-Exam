@@ -13,8 +13,9 @@
         <a class="nav-link" href="#">List Exam</a>
       </li>
     </ul>
+    <%= render 'home/language' %>
     <form class="form-inline my-2 mx-3 my-lg-0">
-      <% unless current_user.present?%>
+      <% unless current_user %>
         <%= link_to "Login", login_path, class: "btn btn-outline-success my-2 my-sm-0" %>
       <% else %>
         <div class="dropdown">
