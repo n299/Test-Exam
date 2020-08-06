@@ -5,7 +5,8 @@ module Admins
     before_action :set_user, only: %i[edit update destroy]
 
     def index
-      @users = User.all.decorate
+      @q = User.ransack(params[:q])
+      @users = @q.result.decorate
     end
 
     def new

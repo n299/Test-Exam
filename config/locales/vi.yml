@@ -13,6 +13,23 @@ vi:
         created_at: Ngày làm bài
     sidebar:
       user_exam: Bài kiểm tra đã làm
+    users:
+      shared:
+        list_user:
+          users_size: Người dùng ( %{size} )
+          new_user: Tạo người dùng mới
+          results: '%{users_size} kết quả'
+          avatar: Hình đại diện
+          user_name: Tên tài khoản
+          full_name: Họ tên đầy đủ
+          phone: Số ĐT
+          action: Hành động
+          confirm: Bạn có chắc chắn xóa người dùng này?
+          no_result_html: Chúng tôi không tìm thấy bất kỳ kết quả nào<br>
+                          Hãy chắc rằng từ bạn vừa dùng để tìm kiếm là chính xác hoặc dùng từ khóa khác.
+        search:
+          search: Tìm kiếm
+          search_placeholder: tìm kiếm theo tên ...
 
   exams:
     shared:
