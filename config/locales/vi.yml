@@ -33,7 +33,7 @@ vi:
     edit:
       avatar: Ảnh đại diện
       profile: Hồ sơ
-      name: Họ tên
+      name: Họ và tên
       first_name: Tên đầu
       last_name: Tên cuối
       username: Tên tài khoản

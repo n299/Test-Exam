@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get 'login', to: 'users/sessions#new'
     end
     resources :users, only: %i[update]
-    resources :exams
+    resources :exams, only: %i[index show]
     get 'user/profile', to: 'users#edit', as: 'profile'
 
     # Devise Admin
