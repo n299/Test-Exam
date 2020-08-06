@@ -14,4 +14,8 @@ class ExamDecorator < Draper::Decorator
   def check_exam_status
     status_draft? ? 'warning' : 'success'
   end
+
+  def total_score
+    questions.sum(:point)
+  end
 end

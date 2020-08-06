@@ -44,3 +44,38 @@ en:
         created_at: Created at
     sidebar:
       user_exam: User exams
+
+  exams:
+    shared:
+      exams:
+        title: Choose your exam!
+        content: Exam content
+        total_score: Total score
+        stt: Number
+        start: Start!
+
+  home:
+    header:
+      confirm: Are you sure to logout?
+      home: Home
+      list_exam: List exam
+
+  users:
+    edit:
+      avatar: Avatar
+      profile: Profile
+      name: Name
+      first_name: First name
+      last_name: Last name
+
+  helpers:
+    label:  
+      user:
+        username: Username
+        phone: Phone
+        name: Name
+        password: password
+        password_confirmation: Password confirm
+    submit:
+      create: Create %{model}
+      update: Confirm changes to %{model}
