@@ -1,0 +1,13 @@
+body {
+  counter-reset: my-sec-counter;
+}
+
+.list_exam::before {
+  /* Increment "my-sec-counter" by 1 */
+  counter-increment: my-sec-counter;
+  content: counter(my-sec-counter);
+}
+
+.table thead tr th {
+  border: 0 !important;
+}

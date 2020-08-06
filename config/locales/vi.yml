@@ -13,3 +13,40 @@ vi:
         created_at: Ngày làm bài
     sidebar:
       user_exam: Bài kiểm tra đã làm
+
+  exams:
+    shared:
+      exams:
+        title: Chọn bài kiểm tra !
+        content: Nội dung
+        total_score: Tổng số điểm
+        stt: STT
+        start: Bắt đầu !
+
+  home:
+    header:
+      confirm: Bạn có chắc chắn muốn thoát?
+      home: Trang chủ
+      list_exam: Các bài kiểm tra
+
+  users:
+    edit:
+      avatar: Ảnh đại diện
+      profile: Hồ sơ
+      name: Họ tên
+      first_name: Tên đầu
+      last_name: Tên cuối
+      username: Tên tài khoản
+      phone: Số điện thoại
+
+  helpers:
+    label:  
+      user:
+        username: Tên tài khoản
+        phone: Số điện thoại
+        name: Họ và tên
+        password: Mật khẩu
+        password_confirmation: Nhập lại mật khẩu
+    submit:
+      create: Tạo mới %{model}
+      update: Xác nhận thay đổi %{model}

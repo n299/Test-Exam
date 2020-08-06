@@ -1,5 +1,5 @@
   /* import bosstrap */
-@import "~bootstrap/scss/bootstrap";
+@import '~bootstrap/scss/bootstrap';
 
   /* import fontawesome */
 @import '@fortawesome/fontawesome-free';
@@ -8,4 +8,7 @@
 @import './customize';
 
   /* import sb admin */
-@import "~startbootstrap-sb-admin-2/scss/sb-admin-2";
+@import '~startbootstrap-sb-admin-2/scss/sb-admin-2';
+
+  /* import exams */
+@import './exams/exams';

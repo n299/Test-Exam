@@ -10,13 +10,14 @@ Rails.application.routes.draw do
       get 'login', to: 'users/sessions#new'
     end
     resources :users, only: %i[update]
+    resources :exams
     get 'user/profile', to: 'users#edit', as: 'profile'
+
     # Devise Admin
     devise_for :admins, controllers: { sessions: 'admins/sessions' }
     namespace :admins do
       root 'pages#index'
       resources :users
-
       resources :categories
       resources :exams
       resources :user_exams, only: %i[index]

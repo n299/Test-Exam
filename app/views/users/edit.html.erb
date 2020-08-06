@@ -4,34 +4,34 @@
     <div class="main-profile p-3 flex-grow-1 bg-white">
       <%= form_for current_user do |f| %>
         <div class="settings-title-section d-flex justify-content-center align-items-center flex-wrap">
-            <a class="settings-username" href="/"><%= current_user.username %></a>
-            <span class="settings-title-separator">/</span>
-            <span class="settings-title p-2">Public Profile</span>
+          <%= link_to  current_user.username, root_path, class: "settings-username" %>
+          <span class="settings-title-separator">/</span>
+          <span class="settings-title p-2"><%= t('.profile')%></span>
         </div>
 
         <div class="form-group font-weight-bold">
-            <label for="">Avatar</label><br>
-            <%= image_tag  default_avatar_user(current_user), class: "rounded-circle img-size-4em", id: "img-preview" %>
-            <%= f.file_field :avatar, id: "img-input", accept: ".jpg, .jpeg, .png" %>
+          <%= t('.avatar')%><br>
+          <%= image_tag  @user.default_avatar_user, class: "rounded-circle img-size-4em", id: "img-preview" %>
+          <%= f.file_field :avatar, id: "img-input", accept: ".jpg, .jpeg, .png" %>
         </div>
         
         <div class="form-group font-weight-bold">
-            <label for="">Name</label>
-            <div class="d-flex">
-                <%= f.text_field :first_name, class: 'form-control mr-1', placeholder: "First Name",
-                pattern: regex_name_validate, title: "Name should only contain letters. e.g. John" %>
-                <%= f.text_field :last_name, class: 'form-control mr-1', placeholder: "Last Name",
-                pattern: regex_name_validate, title: "Name should only contain letters. e.g. Wick" %>
-            </div>
+          <%= t('.name')%>
+          <div class="d-flex">
+            <%= f.text_field :first_name, class: 'form-control mr-1', placeholder: "#{t('.first_name')}",
+            pattern: regex_name_validate, title: "Name should only contain letters. e.g. John" %>
+            <%= f.text_field :last_name, class: 'form-control mr-1', placeholder: "#{t('.last_name')}",
+            pattern: regex_name_validate, title: "Name should only contain letters. e.g. Wick" %>
+          </div>
         </div>
 
         <div class="form-group">
-            <label for="username", class='font-weight-bold'>User_name</label><br>
-            <%= f.text_field :username, class: 'form-control' %>
+          <%= f.label :username, class: 'font-weight-bold' %><br />
+          <%= f.text_field :username, class: 'form-control' %>
         </div>
 
         <div class="form-group">
-          <label for="phone" class='font-weight-bold'>Phone</label><br>
+          <%= f.label :phone, class: 'font-weight-bold' %><br />
           <%= f.text_field :phone, class: 'form-control' %>
         </div>
 
@@ -46,7 +46,7 @@
         </div>
 
         <div class="form-group">
-            <%= f.submit "Update user", class: "btn btn-success" %>
+          <%= f.submit class: "btn btn-success" %>
         </div>
       <% end %>
     </div>

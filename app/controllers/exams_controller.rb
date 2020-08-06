@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-class HomeController < ApplicationController
+class ExamsController < ApplicationController
   before_action :set_user, only: :index
 
-  def index; end
+  def index
+    @exams = Exam.status_public.decorate
+  end
 
   private
 

@@ -3,7 +3,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: %i[edit update]
 
-  def edit; end
+  def edit
+    @user = current_user.decorate
+  end
 
   def update
     if current_user.update(user_params)
@@ -16,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     update_attrs = %i[username avatar first_name last_name phone password password_confirmation]
     params.require(:user).permit(update_attrs)
