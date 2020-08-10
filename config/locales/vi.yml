@@ -22,6 +22,11 @@ vi:
         total_score: Tổng số điểm
         stt: STT
         start: Bắt đầu !
+      dialog:
+        content_html: Hoàn thành bài kiểm tra! Bạn nhận được <span id="total_score">0</span> điểm
+      exam_detail:
+        question_content: 'Câu hỏi %{number}: %{content}'
+        submit: Nộp bài!
 
   home:
     header:

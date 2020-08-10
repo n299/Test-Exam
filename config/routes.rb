@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  scope "(:locale)", locale: /en|vi/ do
+  scope '(:locale)', locale: /en|vi/ do
     root 'home#index'
 
     # Devise User
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
     resources :users, only: %i[update]
     resources :exams, only: %i[index show]
+    resources :user_exams
     get 'user/profile', to: 'users#edit', as: 'profile'
 
     # Devise Admin
