@@ -1,0 +1,12 @@
+<div class="card-header py-3 d-flex w-100">
+  <%= search_form_for [:admins, @q], class: "w-100" do |f| %>
+    <div class="form-group w-50 float-left">
+      <div class="input-group mb-3">
+        <%= f.text_field :username_or_full_name_cont, class: "form-control", placeholder: t('.search_placeholder') %>
+        <div class="input-group-append ml-2">
+          <%= f.submit t('.search'), class: "btn btn-secondary btn-sm" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

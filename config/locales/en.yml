@@ -44,6 +44,22 @@ en:
         created_at: Created at
     sidebar:
       user_exam: User exams
+    users:
+      shared:
+        list_user:
+          users_size: Users ( %{size} )
+          new_user: New User
+          results: '%{users_size} results'
+          avatar: Avatar
+          user_name: User name
+          full_name: Full name
+          phone: Phone
+          action: Action
+          confirm: Are you sure to delete this user?
+          no_result_html: We found no results<br>Make sure all words are spelled correctly or try different keywords.
+        search:
+          search: Search
+          search_placeholder: search by name...
 
   exams:
     shared:
