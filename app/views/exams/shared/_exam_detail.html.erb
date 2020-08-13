@@ -1,0 +1,38 @@
+<div class="container mt-3">
+  <div class="d-flex justify-content-between">
+    <div>
+      <h2><%= @exam.content %></h2>
+    </div>
+    <div class="time_countdown">
+      <h2 id="countTime"></h2>
+    </div>
+  </div>
+  <div class="m-4 border-bottom"></div>
+  <div class="panel panel-primary ml-5">
+    <% @exam.questions.each_with_index do |question, index|%>
+      <div class="panel-heading text-info">
+        <h3>
+          <%= t('.question_content', number: index + 1, content: question.content)%>
+        </h3>
+      </div>
+      <div class="panel-body ml-3">
+        <% question.answers.each do |answer|%>
+          <div class="radio">
+            <label>
+              <%= radio_button_tag "question[#{question.id}]", answer.id , false%> <%=answer.text%>
+            </label>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="text-center">
+    <button class="btn btn-primary rounded" id ="submit_exam" >
+      <%= t('.submit')%>
+    </button>
+  </div>
+  <input type="hidden" id="user_exam" data-user-exams-path="<%= user_exams_path %>"/>
+  <input type="hidden" id="exam" data-exam-id="<%= @exam.id %>"/>
+  <div class="col-md-1 column"></div>
+</div>
+<%= render 'exams/shared/dialog'%>

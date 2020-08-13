@@ -53,6 +53,16 @@ en:
         total_score: Total score
         stt: Number
         start: Start!
+      dialog:
+        content_html: Exam completed! You get <span id="total_score">0</span> point
+        submit: See your exam results
+      exam_detail:
+        question_content: 'Question %{number}: %{content}'
+        submit: Submit!
+  
+  user_exams:
+    show:
+      question_content: 'Question %{number}: %{content}' 
 
   home:
     header:

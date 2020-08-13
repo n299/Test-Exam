@@ -32,3 +32,6 @@ import "startbootstrap-sb-admin-2/vendor/jquery-easing/jquery.easing";
 
 // import cocoon
 import "cocoon";
+
+// import submit exam
+import "./submit_exam";

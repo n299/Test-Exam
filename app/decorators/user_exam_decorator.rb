@@ -10,4 +10,12 @@ class UserExamDecorator < Draper::Decorator
   def user_success_exam
     user.decorate.full_name
   end
+
+  def exam_content
+    exam.content
+  end
+
+  def exam_questions
+    exam.questions
+  end
 end
