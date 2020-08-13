@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_051104) do
+ActiveRecord::Schema.define(version: 2020_08_10_090650) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_051104) do
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "content"
     t.index ["category_id"], name: "index_exams_on_category_id"
   end
 
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 2020_07_28_051104) do
     t.integer "score"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "user_answers"
     t.index ["exam_id"], name: "index_user_exams_on_exam_id"
     t.index ["user_id"], name: "index_user_exams_on_user_id"
   end

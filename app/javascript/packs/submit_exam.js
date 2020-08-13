@@ -35,6 +35,7 @@ $(document).on('turbolinks:load', function() {
                   firstTime = false;
                   checkAfterSubmit = false;
                   $('#dialog_exam').modal('show');
+                  $('#redirect_btn').attr("href", data.user_exam_path);
                 }
               },
               error: function (error) {
@@ -55,7 +56,7 @@ $(document).on('turbolinks:load', function() {
     return answersId;
   };
 
-  let timerId = setInterval(function(){
+  let timerId = setInterval(()=>{
     countdown -= 1000;
     let min = Math.floor(countdown / (60 * 1000));
     let sec = Math.floor((countdown - (min * 60 * 1000)) / 1000);

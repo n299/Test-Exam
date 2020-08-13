@@ -24,9 +24,14 @@ vi:
         start: Bắt đầu !
       dialog:
         content_html: Hoàn thành bài kiểm tra! Bạn nhận được <span id="total_score">0</span> điểm
+        submit: Xem thông tin bài thi
       exam_detail:
         question_content: 'Câu hỏi %{number}: %{content}'
         submit: Nộp bài!
+  
+  user_exams:
+    show:
+      question_content: 'Câu hỏi số %{number}: %{content}' 
 
   home:
     header:

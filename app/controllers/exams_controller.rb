@@ -15,6 +15,6 @@ class ExamsController < ApplicationController
   private
 
   def set_user
-    @user = current_user.decorate
+    @user = current_user.decorate if user_signed_in?
   end
 end
