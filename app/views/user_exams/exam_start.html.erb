@@ -4,7 +4,8 @@
       <h2><%= @exam.content %></h2>
     </div>
     <div class="time_countdown">
-      <h2 id="countTime"></h2>
+      <h2 id="countTime">
+      </h2>
     </div>
   </div>
   <div class="m-4 border-bottom"></div>
@@ -31,8 +32,8 @@
       <%= t('.submit')%>
     </button>
   </div>
-  <input type="hidden" id="user_exam" data-user-exams-path="<%= user_exams_path %>"/>
-  <input type="hidden" id="exam" data-exam-id="<%= @exam.id %>"/>
+  <input type="hidden" id="user_exam" data-user-exam-path="<%= user_exam_path(@exam_start.id) %>"/>
+  <input type="hidden" id="time_end" data-time-end="<%= @time %>"/>
   <div class="col-md-1 column"></div>
 </div>
 <%= render 'exams/shared/dialog'%>

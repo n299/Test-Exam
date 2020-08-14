@@ -10,6 +10,16 @@ class Exam < ApplicationRecord
 
   enum status: %i[draft public], _prefix: true
 
+  def self.check_exam(user)
+    Exam.status_public.decorate.select do |exam|
+      UserExam.where(user: user, exam: exam, completed: true).blank?
+    end
+  end
+
+  def user_got_exam(user)
+    user_exams.where(user: user)
+  end
+
   private
 
   def reject_questions(attributes)

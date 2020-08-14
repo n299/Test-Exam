@@ -12,6 +12,9 @@
       <li class="nav-item">
         <%= link_to t('.list_exam'), exams_path, class: "nav-link"%>
       </li>
+      <li class="nav-item">
+        <%= link_to t('.list_user_exam'), user_exams_path, class: "nav-link"%>
+      </li>
     </ul>
     <%= render 'home/language' %>
     <form class="form-inline my-2 mx-3 my-lg-0">
@@ -19,8 +22,8 @@
         <%= link_to "Login", login_path, class: "btn btn-outline-success my-2 my-sm-0" %>
       <% else %>
         <div class="dropdown">
-          <button class="btn btn-out-secondary my-2 my-sm-0" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Hi <%= current_user.username %>!
+          <button class="btn btn-out-secondary my-2 my-sm-0 text-info" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.username %>
             <%= image_tag @user.default_avatar_user, class: 'rounded-circle img-size-2em' %>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">

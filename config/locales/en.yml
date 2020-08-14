@@ -78,13 +78,20 @@ en:
   
   user_exams:
     show:
-      question_content: 'Question %{number}: %{content}' 
+      question_content: 'Question %{number}: %{content}'
+    index:
+      title: List Exam
+      stt: Number
+      content: Exam content
+      score: Score
+      message_html: You have not completed any exam yet, <a href="/exams">start taking the exam!! </a> 
 
   home:
     header:
       confirm: Are you sure to logout?
       home: Home
       list_exam: List exam
+      list_user_exam: Exams completed
 
   users:
     edit:

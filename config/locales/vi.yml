@@ -48,13 +48,21 @@ vi:
   
   user_exams:
     show:
-      question_content: 'Câu hỏi số %{number}: %{content}' 
+      question_content: 'Câu hỏi số %{number}: %{content}'
+    index:
+      title: Các bài đã hoàn thành
+      stt: STT
+      content: Nội dung
+      score: Tổng điểm
+      message_html: Bạn chưa hoàn thành bài thi nào cả, <a href="/exams">bắt đầu làm bài!! </a> 
 
   home:
     header:
       confirm: Bạn có chắc chắn muốn thoát?
       home: Trang chủ
       list_exam: Các bài kiểm tra
+      list_user_exam: Các bài đã hoàn thành
+
 
   users:
     edit:

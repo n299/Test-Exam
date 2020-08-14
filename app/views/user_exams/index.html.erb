@@ -1,0 +1,49 @@
+<% if @user_exams.present? %>
+  <div class="container">
+    <div class="text-center text-info card-header bg-white">
+      <h2>
+        <%= t('.title') %>
+      </h2>
+    </div>
+    <div class="card-body table-responsive-xl">
+      <table class="table text-center w-100 border-bottom">
+        <thead>
+          <tr class="text-info h5">
+            <th class="text-left">
+              <%= t('.stt') %>
+            </th>
+            <th>
+              <%= t('.content') %>
+            </th>
+            <th>
+              <%= t('.score')%>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user_exams.each do |user_exam| %>
+            <tr class="border-success">
+              <th class="list_exam text-left"></th>
+              <th>
+                <%= user_exam.exam.content %>
+              </th>
+              <th>
+                <%= user_exam.score %>
+              </th>
+              <th>
+                <%= link_to user_exam_path(user_exam) do %>
+                  <i class="fas fa-eye"></i>
+                <% end %>
+              </th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% else %>
+  <div class='text-center text-muted m-5'>
+    <i class="fas fa-exclamation text-danger"></i>
+    <%= t('.message_html')%>
+  </div>
+<% end %>

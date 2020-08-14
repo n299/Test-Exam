@@ -30,7 +30,7 @@
               <%= exam.total_score %>
             </th>
             <th>
-              <%= link_to exam_path(exam) do %>
+              <%= link_to user_exams_path(exam_id: exam.id), method: :post do %>
                 <i class="far fa-play-circle"></i> <%= t('.start')%>
               <% end %>
             </th>
