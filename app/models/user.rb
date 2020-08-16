@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :user_exams
+  has_many :user_exams, dependent: :destroy
   # Attached avatar
   has_one_attached :avatar
   # Validate

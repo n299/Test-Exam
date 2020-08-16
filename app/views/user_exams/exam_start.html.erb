@@ -28,7 +28,7 @@
     <% end %>
   </div>
   <div class="text-center">
-    <button class="btn btn-primary rounded" id ="submit_exam" >
+    <button class="btn btn-primary rounded" id ="submit_exam" data-toggle="modal" data-target="#dialog_exam">
       <%= t('.submit')%>
     </button>
   </div>
@@ -36,4 +36,3 @@
   <input type="hidden" id="time_end" data-time-end="<%= @time %>"/>
   <div class="col-md-1 column"></div>
 </div>
-<%= render 'exams/shared/dialog'%>

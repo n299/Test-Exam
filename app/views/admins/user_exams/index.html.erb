@@ -38,7 +38,7 @@
                   <%= link_to user_exam.exam_content, admins_exam_path(user_exam.exam) %>
                 </td>
                 <td>
-                  <%= user_exam.score %>
+                  <%= t('.exam_score', user_score: user_exam.score, total_score: user_exam.total_score)%>
                 </td>
                 <td>
                   <%= l(user_exam.created_at, format: :default) %>

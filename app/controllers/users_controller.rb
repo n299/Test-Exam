@@ -3,9 +3,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: %i[edit update]
 
-  def edit
-    @user = current_user.decorate
-  end
+  def edit; end
 
   def update
     if current_user.update(user_params)

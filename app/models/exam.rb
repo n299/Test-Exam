@@ -9,16 +9,16 @@ class Exam < ApplicationRecord
   validates :content, presence: true
 
   enum status: %i[draft public], _prefix: true
+  scope :check_exam, ->(user) {
+    status_public.includes(:user_exams).where( user_exams: {completed: true, user_id: user.id}).ids }
+  scope :list_exam, ->(exam_id) { status_public.where.not(id: exam_id) }
+  # # Exam.status_public.includes(:user_exams).where(user_exams: {completed: true, user_id: 1}).select("exams.*, user_exams.id AS idss")
 
-  def self.check_exam(user)
-    Exam.status_public.decorate.select do |exam|
-      UserExam.where(user: user, exam: exam, completed: true).blank?
-    end
-  end
-
-  def user_got_exam(user)
-    user_exams.where(user: user)
-  end
+  # def self.check_exam(user)
+  #   Exam.status_public.decorate.select do |exam|
+  #     UserExam.where(user: user, exam: exam, completed: true).blank?
+  #   end
+  # end
 
   private
 

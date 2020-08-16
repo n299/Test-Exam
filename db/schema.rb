@@ -79,15 +79,6 @@ ActiveRecord::Schema.define(version: 2020_08_14_082929) do
     t.index ["exam_id"], name: "index_questions_on_exam_id"
   end
 
-  create_table "user_answers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "answer_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["answer_id"], name: "index_user_answers_on_answer_id"
-    t.index ["user_id"], name: "index_user_answers_on_user_id"
-  end
-
   create_table "user_exams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "exam_id", null: false
@@ -121,8 +112,6 @@ ActiveRecord::Schema.define(version: 2020_08_14_082929) do
   add_foreign_key "answers", "questions"
   add_foreign_key "exams", "categories"
   add_foreign_key "questions", "exams"
-  add_foreign_key "user_answers", "answers"
-  add_foreign_key "user_answers", "users"
   add_foreign_key "user_exams", "exams"
   add_foreign_key "user_exams", "users"
 end
