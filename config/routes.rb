@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       resources :users
       resources :categories
       resources :exams
-      resources :user_exams, only: %i[index]
+      resources :user_exams, only: %i[index show]
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -2,10 +2,9 @@
 
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: %i[edit update]
+  before_action :set_user
 
-  def edit
-    @user = current_user.decorate
-  end
+  def edit; end
 
   def update
     if current_user.update(user_params)
@@ -22,5 +21,9 @@ class UsersController < ApplicationController
   def user_params
     update_attrs = %i[username avatar first_name last_name phone password password_confirmation]
     params.require(:user).permit(update_attrs)
+  end
+
+  def set_user
+    @user = current_user.decorate
   end
 end

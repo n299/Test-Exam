@@ -27,8 +27,8 @@
             <%= image_tag @user.default_avatar_user, class: 'rounded-circle img-size-2em' %>
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <%= link_to "Setting", profile_path, class: "dropdown-item" %>
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item text-danger", data: { confirm: t('.confirm')} %>
+            <%= link_to t('.setting'), profile_path, class: "dropdown-item" %>
+            <%= link_to t('.logout'), destroy_user_session_path, method: :delete, class: "dropdown-item text-danger", data: { confirm: t('.confirm')} %>
           </div>
         </div>
       <% end %>

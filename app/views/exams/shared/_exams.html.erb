@@ -1,42 +1,49 @@
-<div class="container">
-  <div class="text-center text-info card-header bg-white">
-    <h2>
-      <%= t('.title') %>
-    </h2>
-  </div>
-  <div class="card-body table-responsive-xl">
-    <table class="table text-center w-100 border-bottom">
-      <thead>
-        <tr class="text-info h5">
-          <th>
-            <%= t('.stt') %>
-          </th>
-          <th>
-            <%= t('.content') %>
-          </th>
-          <th>
-            <%= t('.total_score')%>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @exams.each do |exam| %>
-          <tr class="border-success">
-            <th class="list_exam"></th>
+<% if @exams.present? %>
+  <div class="container">
+    <div class="text-center text-info card-header bg-white">
+      <h2>
+        <%= t('.title') %>
+      </h2>
+    </div>
+    <div class="card-body table-responsive-xl">
+      <table class="table text-center w-100 border-bottom">
+        <thead>
+          <tr class="text-info h5">
             <th>
-              <%= exam.content %>
+              <%= t('.stt') %>
             </th>
             <th>
-              <%= exam.total_score %>
+              <%= t('.content') %>
             </th>
             <th>
-              <%= link_to user_exams_path(exam_id: exam.id), method: :post do %>
-                <i class="far fa-play-circle"></i> <%= t('.start')%>
-              <% end %>
+              <%= t('.total_score')%>
             </th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          <% @exams.each do |exam| %>
+            <tr class="border-success">
+              <th class="list_exam"></th>
+              <th>
+                <%= exam.content %>
+              </th>
+              <th>
+                <%= exam.total_score %>
+              </th>
+              <th>
+                <%= link_to user_exams_path(exam_id: exam.id), method: :post do %>
+                  <i class="far fa-play-circle"></i> <%= t('.start')%>
+                <% end %>
+              </th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class='text-center text-muted m-5'>
+    <i class="fas fa-exclamation text-success"></i>
+    <%= t('.message')%>
+  </div>
+<% end %>

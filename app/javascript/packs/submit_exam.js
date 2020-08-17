@@ -4,8 +4,10 @@ $(document).on('turbolinks:load', function() {
   const userExamPath = $('#user_exam').data('user-exam-path');
   let timeEnd = $('#time_end').data('time-end')*1000;
 
-  setTimeout(function(){ 
-    sendAnswerAfterTimeLimited()}, timeEnd);
+  if(!isNaN(timeEnd)){
+    setTimeout(function(){ sendAnswerAfterTimeLimited()}, timeEnd);
+  }
+ 
 
   $('#submit_exam').on('click', function(){
     let answersId = getAnswer();
@@ -32,8 +34,7 @@ $(document).on('turbolinks:load', function() {
                   $('#total_score').html(data.score);
                   firstTime = false;
                   checkAfterSubmit = false;
-                  $('#dialog_exam').modal('show');
-                  $('#redirect_btn').attr("href", data.user_exam_path);
+                  showMessagesAfterSubmit(data.score, data.user_exam_path)
                 }
               },
               error: function (error) {
@@ -58,16 +59,18 @@ $(document).on('turbolinks:load', function() {
     timeEnd -= 1000;
     let min = Math.floor(timeEnd / (60 * 1000));
     let sec = Math.floor((timeEnd - (min * 60 * 1000)) / 1000);
-    if(min < 10 ){
-      min = "0" + min
-    }
-    if(sec < 10 ){
-      sec = "0" + sec
-    }
+    min = (min < 10) ? "0" + min : min;
+    sec = (sec < 10) ? "0" + sec : sec;
+
     if(checkAfterSubmit){
       $("#countTime").html(min + " : " + sec);
     }else{
       clearInterval(timerId);
     }
   }, 1000);
+
+  const showMessagesAfterSubmit = (score, path)=>{
+    alert("You get " + score + " point!");
+    document.location.href = path; 
+  }
 });

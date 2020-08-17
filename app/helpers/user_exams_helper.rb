@@ -12,4 +12,8 @@ module UserExamsHelper
       'text-danger' if list_answer.include? answer.id.to_s
     end
   end
+
+  def check_answer(answer, list_answer)
+    (list_answer.include? answer.id.to_s) ? 'success' : 'danger'
+  end
 end

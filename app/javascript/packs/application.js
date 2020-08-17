@@ -35,3 +35,5 @@ import "cocoon";
 
 // import submit exam
 import "./submit_exam";
+
+import "./preview_img";

@@ -2,11 +2,11 @@
   <div class="card shadow mb-4">
     <div class="card-header py-3 d-flex">
       <h6 class="m-0 font-weight-bold text-primary">
-        Categories ( <%= categories_size %> ) &emsp;
+        <%= t('.categories', size: categories_size) %> &emsp;
       </h6>
       <h6 class="m-0 font-weight-bold text-primary">
         <i class="fas fa-plus-circle text-primary"></i>
-        <%= link_to 'New category', new_admins_category_path %>
+        <%= link_to t('.new_category'), new_admins_category_path %>
       </h6>
     </div>
     <div class="card-body">
@@ -15,8 +15,8 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th >Content</th>
-              <th colspan="2">Action</th>
+              <th ><%= t('.content')%></th>
+              <th colspan="2"><%= t('.action')%></th>
             </tr>
           </thead>
           <tbody>
@@ -34,7 +34,7 @@
                   <% end %>
                 </td>
                 <td class="w-5">
-                  <%= link_to admins_category_path(category), method: :delete, data: {confirm: 'Are you sure to delete this category?'} do %>
+                  <%= link_to admins_category_path(category), method: :delete, data: {confirm: t('.confirm')} do %>
                     <i class="fas fa-trash text-danger"></i>
                   <% end %>
                 </td>

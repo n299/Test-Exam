@@ -6,13 +6,20 @@ vi:
   admins:
     user_exams:
       index:
-        total: Tổng số bài kiểm tra %{exam_size}
+        total: Tổng số bài kiểm tra ( %{exam_size} )
         user: Người làm bài
         exam: Tên bài 
         score: Điểm số
         created_at: Ngày làm bài
+        exam_score: '%{user_score} / %{total_score}'
+        detail: Chi tiết
+      show:
+        question_content: 'Câu hỏi số %{number}: %{content}'
     sidebar:
       user_exam: Bài kiểm tra đã làm
+      users: Người dùng
+      exams: Bài thi
+      categories: Thể loại
     users:
       shared:
         list_user:
@@ -30,6 +37,49 @@ vi:
         search:
           search: Tìm kiếm
           search_placeholder: tìm kiếm theo tên ...
+        form:
+          back: Trở lại
+    exams:
+      shared:
+        answer_fields:
+          remove_answer: Xóa câu trả lời
+          answer: Câu trả lời
+          content: Nội dung
+          correct: Đúng
+          incorrect: Sai
+        form:
+          exam_content: Tiêu đề bài thi
+          add_question: Thêm câu hỏi
+        question_fields:
+          question: Câu hỏi
+          content: Nội dung
+          point: Số điểm
+          add_answer: Thêm câu trả lời
+          remove_question: Xóa câu hỏi
+        list_exam:
+          exam: Số bài thi ( %{size} )
+          new_exam: Tạo bài thi
+          category: Thể loại
+          content: Nội dung
+          status: Trạng thái
+          total_question: Số câu hỏi
+          action: Hành động
+      show:
+        total_question: 'Tổng số câu hỏi: %{size}'
+        content: Nội dung
+        point: Điểm
+        answer: Câu trả lời
+    categories:
+      shared:
+        form:
+          back: Trở lại
+          content: Nội dung
+        list_category:
+          categories: Số thể loại ( %{size} )
+          content: Nội dung
+          action: Hành động
+          confirm: Bạn có chắc chắn muốn xóa thể loại này?
+          new_category: Thêm thể loại mới
 
   exams:
     shared:
@@ -39,14 +89,15 @@ vi:
         total_score: Tổng số điểm
         stt: STT
         start: Bắt đầu !
+        message: Chúc mừng, bạn đã hoàn thành tất cả bài thi!
       dialog:
         content_html: Hoàn thành bài kiểm tra! Bạn nhận được <span id="total_score">0</span> điểm
         submit: Xem thông tin bài thi
-      exam_detail:
-        question_content: 'Câu hỏi %{number}: %{content}'
-        submit: Nộp bài!
-  
+
   user_exams:
+    exam_start:
+      question_content: 'Câu hỏi %{number}: %{content}'
+      submit: Nộp bài!
     show:
       question_content: 'Câu hỏi số %{number}: %{content}'
     index:
@@ -62,6 +113,8 @@ vi:
       home: Trang chủ
       list_exam: Các bài kiểm tra
       list_user_exam: Các bài đã hoàn thành
+      setting: Cài đặt
+      logout: Đăng xuất
 
 
   users:

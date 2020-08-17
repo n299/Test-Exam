@@ -3,14 +3,14 @@
   <%= form_for [:admins, @exam] do |f| %>
     <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :content), {}, { class: 'form-control custom-select mb-3'} %>
     <%= f.select :status, options_for_select(Exam.statuses.map{|key, value| [key.humanize, key]}), {}, { class: 'custom-select mb-3'} %>
-    <%= f.text_field :content, class: 'form-control mb-3', placeholder: ' Exam content'%>
+    <%= f.text_field :content, class: 'form-control mb-3', placeholder: t('.exam_content')%>
     <div class="list_question">
       <div class="form-group question-item border border-secondary p-3 mb-3">
         <%= f.fields_for :questions do |question| %>
           <%= render 'admins/exams/shared/question_fields', f: question %>
         <% end %>
         <div class="text-left">
-          <%= link_to_add_association 'Add question', f, :questions, partial: 'admins/exams/shared/question_fields', class: 'btn btn-sm btn-primary form control m-2' %>
+          <%= link_to_add_association t('.add_question'), f, :questions, partial: 'admins/exams/shared/question_fields', class: 'btn btn-sm btn-primary form control m-2' %>
         </div>
       </div>
     </div>

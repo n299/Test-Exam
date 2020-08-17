@@ -1,14 +1,14 @@
 <div class="nested-fields border border-danger p-2 mb-2">
-  <p> Question: </p>
-  <%= f.text_field :content, class: "form-control mb-3", placeholder: "Content" %>
-  <%= f.text_field :point, class: "form-control mb-3", placeholder: "Point" %>
+  <p> <%= t('.question')%> </p>
+  <%= f.text_field :content, class: "form-control mb-3", placeholder: t('.content') %>
+  <%= f.text_field :point, class: "form-control mb-3", placeholder: t('.point') %>
   <%= f.fields_for :answers do |answer| %>
     <%= render 'admins/exams/shared/answer_fields', f: answer %>
   <% end %>
   <div class="text-left">
-    <%= link_to_add_association 'Add answer', f, :answers, partial: 'admins/exams/shared/answer_fields', class: 'btn btn-sm btn-primary form control m-2' %>
+    <%= link_to_add_association t('.add_answer'), f, :answers, partial: 'admins/exams/shared/answer_fields', class: 'btn btn-sm btn-primary form control m-2' %>
   </div>
   <div class="text-center">
-    <%= link_to_remove_association "Remove question", f, class: 'btn btn-sm btn-danger form control m-2' %>
+    <%= link_to_remove_association t('.remove_question'), f, class: 'btn btn-sm btn-danger form control m-2' %>
   </div>
 </div>
