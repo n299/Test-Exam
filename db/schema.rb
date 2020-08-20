@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_10_090650) do
+ActiveRecord::Schema.define(version: 2020_08_14_082929) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(version: 2020_08_10_090650) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "user_answers"
+    t.boolean "completed"
     t.index ["exam_id"], name: "index_user_exams_on_exam_id"
     t.index ["user_id"], name: "index_user_exams_on_user_id"
   end

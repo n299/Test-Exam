@@ -9,6 +9,9 @@ class Exam < ApplicationRecord
   validates :content, presence: true
 
   enum status: %i[draft public], _prefix: true
+  scope :check_exam, ->(user) {
+    status_public.includes(:user_exams).where( user_exams: {completed: true, user_id: user.id}).ids }
+  scope :list_exam, ->(exam_id) { status_public.where.not(id: exam_id) }
 
   private
 

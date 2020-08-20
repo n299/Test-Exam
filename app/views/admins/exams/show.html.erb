@@ -5,7 +5,7 @@
         <%= @exam.content %> &emsp;
       </h6>
       <h6 class="text-right font-weight-bold text-primary">
-        total question: <%= @questions.size %>
+        <%= t('.total_question', size: @questions.size ) %>
       </h6>
     </div>
     <div class="card-body">
@@ -14,9 +14,9 @@
           <thead>
             <tr>
               <th>ID</th>
-              <th >Content</th>
-              <th>Point</th>
-              <th>Answers</th>
+              <th ><%= t('.content') %></th>
+              <th><%= t('.point') %></th>
+              <th><%= t('.answer') %></th>
             </tr>
           </thead>
           <tbody>

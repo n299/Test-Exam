@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container my-4">
   <div class="d-flex justify-content-between">
     <h2>
       <%= @user_exam.exam_content %>
@@ -8,7 +8,7 @@
     </h2>
   </div>
   <div class="m-4 border-bottom"></div>
-  <div class="panel panel-primary ml-5">
+  <div class="panel panel-primary ml-5 mr-5">
     <% @user_exam.exam_questions.each_with_index do |question, index|%>
       <div class="panel-heading d-flex justify-content-between">
         <h3 class="text-info">
@@ -21,7 +21,7 @@
             <li class="list-group-item d-flex justify-content-between <%= check_answer_correct(answer, @user_exam.user_answers) %>">
               <%= answer.text %>
               <% if answer.correct? %>
-                <span class="badge badge-success badge-pill">
+                <span class="badge badge-<%= check_answer(answer, @user_exam.user_answers) %> badge-pill">
                   <%= question.point %>
                 </span>
               <% end %>

@@ -1,4 +1,4 @@
-<% if @exams.present? %>
+<% if @user_exams.present? %>
   <div class="container">
     <div class="text-center text-info card-header bg-white">
       <h2>
@@ -9,30 +9,30 @@
       <table class="table text-center w-100 border-bottom">
         <thead>
           <tr class="text-info h5">
-            <th>
+            <th class="text-left">
               <%= t('.stt') %>
             </th>
             <th>
               <%= t('.content') %>
             </th>
             <th>
-              <%= t('.total_score')%>
+              <%= t('.score')%>
             </th>
           </tr>
         </thead>
         <tbody>
-          <% @exams.each do |exam| %>
+          <% @user_exams.each do |user_exam| %>
             <tr class="border-success">
-              <th class="list_exam"></th>
+              <th class="list_exam text-left"></th>
               <th>
-                <%= exam.content %>
+                <%= user_exam.exam.content %>
               </th>
               <th>
-                <%= exam.total_score %>
+                <%= user_exam.score %>
               </th>
               <th>
-                <%= link_to user_exams_path(exam_id: exam.id), method: :post do %>
-                  <i class="far fa-play-circle"></i> <%= t('.start')%>
+                <%= link_to user_exam_path(user_exam) do %>
+                  <i class="fas fa-eye"></i>
                 <% end %>
               </th>
             </tr>
@@ -43,7 +43,7 @@
   </div>
 <% else %>
   <div class='text-center text-muted m-5'>
-    <i class="fas fa-exclamation text-success"></i>
-    <%= t('.message')%>
+    <i class="fas fa-exclamation text-danger"></i>
+    <%= t('.message_html')%>
   </div>
 <% end %>

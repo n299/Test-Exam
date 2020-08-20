@@ -7,9 +7,13 @@ module UserExamsHelper
 
   def check_answer_correct(answer, list_answer)
     if answer.correct?
-      'text-success' 
-    elsif list_answer.include? answer.id.to_s
-      'text-danger'
+      'text-success'
+    elsif list_answer.present?
+      'text-danger' if list_answer.include? answer.id.to_s
     end
+  end
+
+  def check_answer(answer, list_answer)
+    (list_answer.include? answer.id.to_s) ? 'success' : 'danger'
   end
 end

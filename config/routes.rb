@@ -11,7 +11,11 @@ Rails.application.routes.draw do
     end
     resources :users, only: %i[update]
     resources :exams, only: %i[index show]
-    resources :user_exams
+    resources :user_exams do
+      member do
+        get :exam_start
+      end
+    end
     get 'user/profile', to: 'users#edit', as: 'profile'
 
     # Devise Admin
@@ -21,7 +25,7 @@ Rails.application.routes.draw do
       resources :users
       resources :categories
       resources :exams
-      resources :user_exams, only: %i[index]
+      resources :user_exams, only: %i[index show]
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

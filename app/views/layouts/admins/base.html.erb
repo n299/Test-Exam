@@ -13,7 +13,12 @@
       <%= render "admins/sidebar" %>
       <div id="content-wrapper" class="d-flex flex-column">
         <%= render 'admins/header' %>
-        <%= yield %>
+        <div class="text-center fixed-bottom w-50">
+          <%= render 'layouts/messages' %>
+        </div>
+        <div id="content">
+          <%= yield %>
+        </div>
         <%= render "admins/footer" %> 
       </div>
     </div>

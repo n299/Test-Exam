@@ -18,4 +18,16 @@ class UserExamDecorator < Draper::Decorator
   def exam_questions
     exam.questions
   end
+
+  def exam_user
+    exam
+  end
+
+  def check_user_exam(current_user)
+    user == current_user && completed?
+  end
+
+  def total_score
+    exam.decorate.total_score
+  end
 end

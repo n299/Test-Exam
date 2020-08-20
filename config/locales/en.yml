@@ -37,13 +37,20 @@ en:
   admins:
     user_exams:
       index:
-        total: Total exam %{exam_size}
+        total: Total exam ( %{exam_size} )
         user: User
         exam: Exam
         score: Score
         created_at: Created at
+        exam_score: '%{user_score} / %{total_score}'
+        detail: Detail
+      show:
+        question_content: 'Question %{number}: %{content}' 
     sidebar:
       user_exam: User exams
+      users: Users
+      exams: Exams
+      categories: Categories
     users:
       shared:
         list_user:
@@ -60,6 +67,49 @@ en:
         search:
           search: Search
           search_placeholder: search by name...
+        form:
+          back: Back
+    exams:
+      shared:
+        answer_fields:
+          remove_answer: Remove answer
+          answer: Answer
+          content: Content
+          correct: Correct
+          incorrect: Incorrect
+        form:
+          exam_content: Exam Content
+          add_question: Add question
+        question_fields:
+          question: Question
+          content: Content
+          point: Point
+          add_answer: Add answer
+          remove_question: Remove question
+        list_exam:
+          exam: Exams ( %{size} )
+          new_exam: New Exam
+          category: Category
+          content: Content
+          status: Status
+          total_question: Total question
+          action: Action
+      show:
+        total_question: 'Total question: %{size}'
+        content: Content
+        point: Point
+        answer: Answers
+    categories:
+      shared:
+        form:
+          back: Back
+          content: Content
+        list_category:
+          categories: Categories ( %{size} )
+          content: Content
+          action: Action
+          confirm: Are you sure to delete this category?
+          new_category: New Category
 
   exams:
     shared:
@@ -69,22 +119,32 @@ en:
         total_score: Total score
         stt: Number
         start: Start!
+        message: Congratulations, you've finished all exam!
       dialog:
         content_html: Exam completed! You get <span id="total_score">0</span> point
         submit: See your exam results
-      exam_detail:
-        question_content: 'Question %{number}: %{content}'
-        submit: Submit!
-  
+
   user_exams:
+    exam_start:
+      question_content: 'Question %{number}: %{content}'
+      submit: Submit!
     show:
-      question_content: 'Question %{number}: %{content}' 
+      question_content: 'Question %{number}: %{content}'
+    index:
+      title: List Exam
+      stt: Number
+      content: Exam content
+      score: Score
+      message_html: You have not completed any exam yet, <a href="/exams">start taking the exam!! </a> 
 
   home:
     header:
       confirm: Are you sure to logout?
       home: Home
       list_exam: List exam
+      list_user_exam: Exams completed
+      setting: Setting
+      logout: Logout
 
   users:
     edit:
