@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    ports:
+      - 5001:3000
+    volumes:
+      - ./:/rails-app
+      - bundle:/rails-app/vendor/bundle
+      - node_modules:/rails-app/node_modules
+    env_file:
+      - .env
+    depends_on:
+      - mysql
+    stdin_open: true
+    tty: true
+
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - exam-data:/var/lib/mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+
+volumes:
+  exam-data:
+  bundle:
+  node_modules:
